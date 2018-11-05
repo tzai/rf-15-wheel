@@ -1,37 +1,55 @@
-## Welcome to GitHub Pages
+## RF-15 Interactive Steering Wheel Module
 
-You can use the [editor on GitHub](https://github.com/tzai/rf-15-wheel/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+The RF-15 interactive steering wheel module was a project that I worked on for Ryerson Formula Racing's 2015 car: the RF-15. The wheel solved the issue of the driver being unaware of how the car was operating during a race; a problem that caused the team to lose two engines in the past. The interactive steering wheel helped us troubleshoot numerous issues for 3 seasons since its creation. It was finally retired in the 2018-2019 season, in favour of a new dash module that is intended to be embedded in the dash of the car.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+This project was my first real introduction into multi-layer PCB design, as well as embedded systems software development.
 
-### Markdown
+<style type="text/css">
+.static-container {
+	position: relative;
+}
+.static {
+	width: 100%;
+	position: absolute;
+  	background: white;
+}
+.static:hover {
+  opacity:0;
+}
+</style>
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Hover over the image!
 
-```markdown
-Syntax highlighted code block
+<div class="static-container"><img class="static" src="src/wheel-static.gif"><img class="active" src="src/rf-15-wheel-startup.gif"></div>
 
-# Header 1
-## Header 2
-### Header 3
+**Hardware design**: First revision in EAGLE, second in Altium Designer
 
-- Bulleted
-- List
+**Software design**: Embedded C, programmed in CodeWarrior, later migrated to Kinetis Studio
 
-1. Numbered
-2. List
+### Backstory
 
-**Bold** and _Italic_ and `Code` text
+When I first joined Ryerson Formula Racing in 2014, one of the most major challenges facing the team was data acquisition and processing. The team did have native datalogging capabilities through the Megasquirt 3 Pro, but getting the log data required connecting a laptop to the ECU through USB, and then downloading a log over an annoyingly-slow connection. There was also no engine feedback to the driver during a race. This lack of communication between the vehicle and the driver proved significant, when the engine blew a piston rod through the side of the block due to oil starvation. The oil issue was determined to be caused by an oversight in the design of the oil pan, but had the driver known that the oil pressure was dropping critically low, they would have been able to shut off the car and save the engine.
 
-[Link](url) and ![Image](src)
-```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### Objective
 
-### Jekyll Themes
+The idea behind the RF-15 steering wheel project was to develop a frictionless interface between the car and the driver. The key design goals were for the module to:
+1. Warn the driver of possible issues
+2. Display diagnostic information useful during testing
+3. Provide gear shift indication to the driver for more efficient shifting
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/tzai/rf-15-wheel/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
-### Support or Contact
+### Features
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+The resulting steering wheel met all of the design requirements outlined at its conception, and even came in handy in situations that we did not consider at the start. For example, the wheel was an invaluable tool during all test sessions when we needed to watch the engine warm up before pushing the car to its limits. With its 8 configurable display pages, it was very convenient to view sensor values on the wheel instead of requiring a laptop to be connected. In the end, the driver interaction module had the following features:
+- 4x20 character OLED display
+- 2 8-position selector switches, one which was used to cycle between 8 display pages
+- 9 shift light LEDs with switchable colour caps. The shift point could be programmed to specify the exact RPM that the driver should switch at, depending on the current gear
+- 4 reconfigurable warning/generic LEDs that could be conveniently configured through the ECU tuning software
+- CAN interface for communicating with the ECU
+- Prototyping area for development purposes
+
+
+### Gallery
+
+Coming soon!

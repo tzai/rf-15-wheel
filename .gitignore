@@ -1,0 +1,5 @@
+# ignore all local Jekyll files
+docs/_layout/
+docs/_sites/
+docs/vendor/
+docs/Gemfile*
