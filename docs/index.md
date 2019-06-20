@@ -53,3 +53,5 @@ The resulting steering wheel met all of the design requirements outlined at its 
 ### Gallery
 
 Coming soon!
+
+[![Analytics](https://ga-beacon.appspot.com/UA-142465125-1/rf-15-wheel)](http://talzaitsev.com/rf-15-wheel)
