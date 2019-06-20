@@ -54,4 +54,4 @@ The resulting steering wheel met all of the design requirements outlined at its 
 
 Coming soon!
 
-[![Analytics](https://ga-beacon.appspot.com/UA-142465125-1/rf-15-wheel)](https://github.com/igrigorik/ga-beacon)
+[![Analytics](https://ga-beacon.appspot.com/UA-142465125-2/rf-15-wheel)](https://github.com/igrigorik/ga-beacon)
